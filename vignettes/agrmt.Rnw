@@ -18,7 +18,7 @@
 \maketitle
 
 \section{Overview}
-This package calculates agreement in ordered rating scales. It implements Cees van der Eijk's \citeyearpar{vdE2001} measure of agreement ``A'', which can be used to describe agreement, consensus, or polarization among respondents.
+This package calculates agreement in ordered rating scales. It principally implements Cees van der Eijk's \citeyearpar{vdE2001} measure of agreement ``A'', which can be used to describe agreement, consensus, or polarization among respondents. Other measures of agreement or consensus are included, as is Galtung's \citeyearpar{Galtung} AJUS system.
 
 \section{Getting Data In}
 The functions in this package use what I refer to as frequency vectors. A frequency vector describes the number of observations in a given category. For example, the vector [10,20,30,15,4] describes 10 observations with position 1, 20 observations with position 2, 30 observations with position 3, 15 observations with position 4, and 4 observations with position 5. At least three categories are required to calculate agreement.
@@ -134,6 +134,16 @@ polarization(c(1.6,2.6,8.2,21,29.3,27,10.3))    # D66
 
 In a typical setting, we would probably use a variable name from a data set (e.g. POSITION): \texttt{polarization(collapse(POSITION, pos=0:5))}.
 
+\section{Leik's Consensus}
+
+\citet{Leik} introduced a measure of ordinal dispersion in 1966. It uses the cumulative frequency distribution to determine ordinal dispersion. The extremes (agreement, polarization) largely correspond to the types used by Cees van der Eijk. By contrast, the mid-point depends on the number of categories: it tends toward 0.5 as the number of categories increases. The van der Eijk measure has a fixed mid-point that is independent from the number of categories. Leik defends this difference by highlighting the increased probability of falling into polarized patterns when there are fewer categories. If all observations are in the same category, ordinal dispersion is 0. With half the observations in one extreme category, and half the observations in the other extreme, Leik's measure gives a value of 1.
+
+Leik's ordinal dispersion measure is a percentage, and can be interpreted accordingly. Ordinal dispersion can be used to express consensus or agreement, simply by taking: 1 - ordinal dispersion.
+
+\section{Tatsle and Wierman's Consensus}
+
+\citet{TW} take a different approach to measuring consensus, using the Shannon entropy as the basis.
+
 \section{AJUS}
 The package includes a few additional functions for frequency vectors. The AJUS classification of distributions is one: \citet{Galtung} introduced a system to classify distributions according to shape. This is a means to reduce complexity. For full details refer to Galtung's book on social research.
 
@@ -244,7 +254,7 @@ modes(V3, tolerance=30) # will find positions 3 and 5 (510 and 530 are nearly th
 % needs an example with second.modes
 
 \section{Going Further}
-For further documentation, please refer to the original contributions by \citet{vdE2001} and \citet{Galtung}, and refer to the package help files.
+For further documentation, please refer to the original contributions by \citet{vdE2001}, \citet{Leik}, \citet{TW}, and \citet{Galtung}, and refer to the package help files.
 
 \bibliographystyle{plainnat}
 
