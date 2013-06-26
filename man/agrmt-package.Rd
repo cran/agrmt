@@ -3,7 +3,7 @@
 \alias{agrmt}
 \docType{package}
 \title{Calculates agreement A}
-\description{This package calculates agreement in ordered rating scales. It implements van der Eijk's (2001) measure of agreement A, which can be used to describe agreement, consensus, or polarization among respondents.}
+\description{This package calculates agreement in ordered rating scales. It implements van der Eijk's (2001) measure of agreement A, which can be used to describe agreement, consensus, or polarization among respondents. It also implements other related measures.}
 \details{The main functions in this package are \code{\link{agreement}} to calculate agreement "A", and  \code{\link{polarization}} to calculate a polarization score based on agreement A. The package also includes functions to classify distributions according to Galtung's (1969) AJUS-system, and changes over time according to Galtung's (1969) ISD-system. Moreover, the function \code{\link{modes}} can identify the position of multiple modes.}
 \author{Didier Ruedin
 
