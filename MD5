@@ -1,6 +1,6 @@
-1d87a82a5b2286732237c953939e9af9 *DESCRIPTION
+0d3c2ace7eb55c01f482e9a7fdb623b5 *DESCRIPTION
 8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
-225b1262856b7dcc0ccbbba26073c0c4 *R/BerryMielke.R
+0a147a1cd3d44500eab82ad807671823 *R/BerryMielke.R
 0cfbc9dcf1c307e75718f93cab370af1 *R/BlairLacy.R
 9b728a8b20daced7339c2be457770487 *R/Kvalseth.R
 abedd76b0c763ec8cdb518b46147f0a1 *R/Leik.R
@@ -8,7 +8,7 @@ abedd76b0c763ec8cdb518b46147f0a1 *R/Leik.R
 1e9a0ef1c6dc58e8b13cdaddf4ea8da4 *R/agreementError.R
 b7db15397cc8c44213373bb3412af216 *R/ajus.R
 fbf8bd3b5eae014b54a8e18ea4519e6c *R/ajusCheck.R
-494cc135c14d708f8868c2803e1f9d49 *R/ajusPlot.R
+87dd158c7d076572ea9d0c5a47ee831d *R/ajusPlot.R
 9b3dfe07f9b9f0ee18a258b3ad289b1c *R/collapse.R
 6117851fc03a667bd4d1692277e450a4 *R/compareAgreement.R
 13f36177dc8357ed6c9552946758ac39 *R/compareValues.R
@@ -25,10 +25,11 @@ a553c3a04a9033026424d70160d4f24d *R/patternVector.R
 68af4139d99ec6a82eddcbf5f5e330a4 *R/polarization.R
 c2dffca60ddfa6ceeacb1f37fd468925 *R/reduceVector.R
 c160413530575cd41dbf8c7c6a5d19f4 *R/secondModes.R
+4663de74873c96829b51327c0c59fc40 *build/vignette.rds
 dbf03b4c6febe9a3f4c2b659e2c38596 *inst/doc/agrmt.R
 461f5dd79b430671c14ebf5483fede65 *inst/doc/agrmt.Rnw
 79aedcc05a2a352c921bf920bb2a196b *inst/doc/agrmt.pdf
-3a54d3420ec2ebd432852806242975d6 *man/BerryMielke.Rd
+e23e3c19cd5ecf034bccf9155cb4337d *man/BerryMielke.Rd
 361f08199bdc15ac7d143b605ede4b41 *man/BlairLacy.Rd
 b45869fbeef31b0812a8fed9b4274070 *man/Kvalseth.Rd
 cf9b0953f6cdd438e368db53de988268 *man/Leik.Rd
@@ -37,8 +38,8 @@ cda3e09a7aad3c7ce0cd99d7e21991ee *man/agreementError.Rd
 b32a2fbca126fd1b8c1c07adff827019 *man/agrmt-package.Rd
 4cb34b3fe4a32585c4cb3cb3710a536e *man/ajus.Rd
 35098a65e870c57b2c347f3af57e119d *man/ajusCheck.Rd
-17db7cb753c4bbf99db4cddd24f877ad *man/ajusPlot.Rd
-16a9f545344d0f51cbf5f619f5b7125c *man/collapse.Rd
+d8795650c94b2cd899547527f66bae4e *man/ajusPlot.Rd
+e7ec18818991b16590374af226ec52b1 *man/collapse.Rd
 dce425688f2728fccd7a4f1c6805d229 *man/compareAgreement.Rd
 d5dd0c36b24b0490fa8d6a08b0ce16c7 *man/compareValues.Rd
 2920e523264ee4f25ba7d9d72f06eed2 *man/consensus.Rd
