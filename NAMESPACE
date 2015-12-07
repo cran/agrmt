@@ -1,1 +1,3 @@
 exportPattern("^[[:alpha:]]+")
+importFrom("graphics", "axis", "plot", "text")
+importFrom("stats", "na.omit", "sd")

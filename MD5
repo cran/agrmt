@@ -1,6 +1,6 @@
-cd60d590dbc762b009dc22a13c8404e9 *DESCRIPTION
-8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
-0a147a1cd3d44500eab82ad807671823 *R/BerryMielke.R
+8e975ecbc736ed58c4ef51b8f215623b *DESCRIPTION
+c03cd402c8db1b6ebacfde4b72766bd7 *NAMESPACE
+d18bb8a35cc0284e0ba0683f9041b7fb *R/BerryMielke.R
 0cfbc9dcf1c307e75718f93cab370af1 *R/BlairLacy.R
 9b728a8b20daced7339c2be457770487 *R/Kvalseth.R
 abedd76b0c763ec8cdb518b46147f0a1 *R/Leik.R
@@ -26,7 +26,7 @@ a553c3a04a9033026424d70160d4f24d *R/patternVector.R
 68af4139d99ec6a82eddcbf5f5e330a4 *R/polarization.R
 c2dffca60ddfa6ceeacb1f37fd468925 *R/reduceVector.R
 c160413530575cd41dbf8c7c6a5d19f4 *R/secondModes.R
-948620a10865e702e24c5f76e83741d5 *build/vignette.rds
+10ec6d1e3961a5d2d910b6a9846c8cc5 *build/vignette.rds
 dbf03b4c6febe9a3f4c2b659e2c38596 *inst/doc/agrmt.R
 461f5dd79b430671c14ebf5483fede65 *inst/doc/agrmt.Rnw
 79aedcc05a2a352c921bf920bb2a196b *inst/doc/agrmt.pdf
