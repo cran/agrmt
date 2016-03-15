@@ -1,4 +1,4 @@
-\documentclass{article}   % tidy up here (remove dependencies called that are not actually needed)
+\documentclass{article}     % tidy up here (remove dependencies called that are not actually needed)
 \usepackage[english]{babel} % workaround for the silly tilde bug!
 \usepackage{natbib}         % cite
 \usepackage{hyperref}       % hyperlinks for references
@@ -6,9 +6,9 @@
 \usepackage[nogin]{Sweave}  % no size/scaling options passed on; set size manually
 
 \title{An Introduction to the R Package Agrmt}
-\author{Didier Ruedin\\University of Neuch\^atel\\didier.ruedin@wolfson.oxon.org}
+\author{Didier Ruedin\\University of Neuch\^atel and University of the Witwatersrand\\didier.ruedin@wolfson.oxon.org}
 
-%\VignetteIndexEntry{R Package to Calculate agreement A} 
+%\VignetteIndexEntry{R Package to Calculate agreement A}
 %\VignettePackage{agrmt}
 
 \begin{document}
@@ -18,26 +18,34 @@
 \maketitle
 
 \section{Overview}
-This package calculates agreement in ordered rating scales. It principally implements Cees van der Eijk's \citeyearpar{vdE2001} measure of agreement ``A'', which can be used to describe agreement, consensus, or polarization among respondents. Other measures of agreement or consensus are included, as is Galtung's \citeyearpar{Galtung} AJUS system.
+
+This package calculates agreement (consensus, polarization, dispersion) in ordered rating scales. It principally implements Cees van der Eijk's \citeyearpar{vdE2001} measure of agreement ``A'', which can be used to describe agreement, consensus, or polarization among respondents. Other measures of agreement or consensus are included, as is Galtung's \citeyearpar{Galtung} AJUS system.
 
 \section{Getting Data In}
+
 The functions in this package use what I refer to as frequency vectors. A frequency vector describes the number of observations in a given category. For example, the vector [10,20,30,15,4] describes 10 observations with position 1, 20 observations with position 2, 30 observations with position 3, 15 observations with position 4, and 4 observations with position 5. At least three categories are required to calculate agreement.
 
 There are many ways to create frequency vectors, including the \texttt{table} function in R. Your data may already come in the form of a frequency vector. The package provides a helper function \texttt{collapse} to cater with empty cells. Consider a very simple case to illustrate the difference:
+
 \begin{Scode}{echo=TRUE,fig=FALSE}
 library(agrmt)
 x <- c(1,1,3) # these are our data
 # 2 observations with position 1,
 # 1 observation with position 3
-table(x)      
+table(x)
 collapse(x)
 collapse(x, pos=1:3) # now we specify which categories exist
 \end{Scode}
+
 Using \texttt{table} we simply get a summary of the positions and number of observations at these positions. The helper function \texttt{collapse} lets us specify which categories actually exist. In this example, we specify that these are observations on a variable with 3 categories: 1, 2, and 3. The fact that there are \emph{no} observations at position 2 is important information when calculating agreement.
 
+Some measures require standardized frequency vectors, that is the frequencies expressed as a proportion. In this example, the proportion of responses at position 1 is 0.67, the proportion at position 2 is 0, and the proportion at position 3 is 0.33. Where standardized frequency vectors are required, frequency vectors that do not sum to 1 (i.e. that are not standardized) are automatically standardized by dividing each element of the frequency vector by the sum of the vector. This assumes complete data; a general assumption of the measures in this package.
+
 \section{Agreement}
-\subsection{Concept}
-Ordered rating scales are a common format in surveys, and often we are interested in the extent to which responses are in agreement (whether there is consensus, whether there is concentration among the responses). Standard deviations are in this case an inappropriate measure. Van der Eijk's measure of agreement A dis-aggregates frequency distributions into component parts called layers. At the level of these layers, agreement can easily be determined, and the measure of agreement provides the weighted average.
+
+\subsection{Concept: Agreement in Ordered Rating Scales}
+
+Ordered rating scales are a common format in surveys, and often we are interested in the extent to which responses are in agreement (whether there is consensus, whether there is concentration among the responses). Although frequently used, standard deviations are in this case an inappropriate measure. Van der Eijk's measure of agreement ``A'' dis-aggregates frequency distributions into component parts called layers. At the level of these layers, agreement can easily be determined, and the measure of agreement provides the weighted average.
 
 We can use the example provided by van der Eijk (p.331) to illustrate the use of layers.
 
@@ -62,7 +70,7 @@ Layer 4 & 0  & 0  & 10  & 10  & 80  & 10 & 0  & 0.5   & 0011110 & 0.04 \\
 Layer 5 & 0  & 0  & 80  & 80  & 80  & 0  & 0  & 0.667 & 0011100 & 0.24 \\
 Layer 6 & 0  & 0  & 80  & 0   & 80  & 0  & 0  & 0.467 & 0010100 & 0.16 \\
 Layer 7 & 0  & 0  & 0   & 0   & 320 & 0  & 0  & 1     & 0000100 & 0.32 \\
-Total   & 30 & 40 & 210 & 130 & 530 & 50 & 10 &       &         & \\			
+Total   & 30 & 40 & 210 & 130 & 530 & 50 & 10 &       &         & \\
 \end{tabular}
 \end{table}
 
@@ -71,22 +79,24 @@ The frequency vector is visible in the bottom row (`total'). To calculate the le
 Using the weighted average, we get a level of agreement of 0.61 in this example. The outlined procedure can be applied to any ordered frequency distribution.
 
 \subsection{Interpretation of Agreement Scores}
-Levels of agreement range from -1 to 1. There are three ideal-typical positions that help interpretation of the scores. If all respondents agree on the category (position), agreement is 1. This is illustrated in the top-left corner of the figure. If the respondents are evenly spread, and each category has the same number of responses, agreement is 0. This is illustrate on the top right of the figure. If respondents are divided, and half the responses are in one category, and the other half are in a different, non-neighbouring category, agreement is -1. This is show on the bottom left of the figure. The following figure also includes an example between these ideal types (bottom right). Agreement is only defined if there are at least three response categories, and it does not tell you which of the categories is the most common one. For this reason, it is advisable to look at an appropriate measure of central tendency, such as the interpolated median.
+
+Levels of agreement range from -1 to 1. There are three ideal-typical positions that help interpretation of the scores. If all respondents agree on the category (position), agreement is 1. This is illustrated in the top-left corner of the figure. If the respondents are evenly spread, and each category has the same number of responses, agreement is 0. This is illustrated at the top right of the figure. If respondents are divided, and half the responses are in one category, and the other half are in a different, non-neighbouring category, agreement is -1. This is shown at the bottom left of the figure. The following figure also includes an example between these ideal types (bottom right). Agreement is only defined if there are at least three response categories, and it does not tell you which of the categories is the most common one. For this reason, it is also advisable to look at an appropriate measure of central tendency, such as the interpolated median.
 
 \begin{Scode}{echo=FALSE,fig=TRUE, results=hide, width=4, height=5}
 split.screen(c(2,2))
-hist(c(1,1,1,1), breaks=0:4, xlim=c(0,4), ylim=c(0,4), main="Agreement", xlab="Agreement = 1")
+hist(c(1,1,1,1), breaks=0:4, xlim=c(0,4), ylim=c(0,4), col="grey", main="Agreement", xlab="Agreement = 1")
 screen(2)
-hist(c(1,2,3,4), breaks=0:4, xlim=c(0,4), ylim=c(0,4), main="No Agreement", xlab="Agreement = 0")
+hist(c(1,2,3,4), breaks=0:4, xlim=c(0,4), ylim=c(0,4), col="grey", main="No Agreement", xlab="Agreement = 0")
 screen(3)
-hist(c(1,1,4,4), breaks=0:4, xlim=c(0,4), ylim=c(0,4), main="Polarization", xlab="Agreement = -1")
+hist(c(1,1,4,4), breaks=0:4, xlim=c(0,4), ylim=c(0,4), col="grey", main="Polarization", xlab="Agreement = -1")
 screen(4)
-hist(c(1,1,3,4), breaks=0:4, xlim=c(0,4), ylim=c(0,4), main="", xlab="Agreement = 0.08")
+hist(c(1,1,3,4), breaks=0:4, xlim=c(0,4), ylim=c(0,4), col="grey", main="", xlab="Agreement = 0.08")
 # agreement(collapse(c(1,1,3,4), pos=1:4))
 close.screen(all=TRUE)
 \end{Scode}
 
 \subsection{Calculating Agreement}
+
 To calculate agreement, we simply call \texttt{agreement} with the frequency vector as the argument. There is normally \emph{no reason} to use the old algorithm, which can be set using \texttt{old=TRUE}.
 
 Let us illustrate this using the data from above.
@@ -96,7 +106,7 @@ x <- c(30, 40, 210, 130, 530, 50, 10) # these are our data
 agreement(x)
 \end{Scode}
 
-Here are two additional examples, using data from van der Ejik's article. Van der Eijk gives the example of respondents placing political parties on a 7-point rating scale. 
+Here are two additional examples, using data from van der Ejik's article. Van der Eijk gives the example of respondents placing political parties on a 7-point rating scale.
 
 \begin{table}[ht] % here
 \begin{tabular}{l c c c c c c c} %alignments are required
@@ -106,16 +116,29 @@ D66      & 1.6\% & 2.6\% & 8.2\% & 21\%  & 29.3\% & 27\%   & 10.3\% \\
 \end{tabular}
 \end{table}
 
-To calculate the level of agreement for these two frequency distribution, we can simply type \texttt{agreement(c(2.4,2.8,3.2,6.2,13.5,30.4,41.6))} for the PvdA, and \texttt{agreement(c(1.6,2.6,8.2,21,29.3,27,10.3))} for the D66. This gives us levels of agreement of 0.61 for the PvdA, and 0.48 for the D66.
+To calculate the level of agreement for these two frequency distributions, we can simply type \texttt{agreement(c(2.4,2.8,3.2,6.2,13.5,30.4,41.6))} for the PvdA, and \texttt{agreement(c(1.6,2.6,8.2,21,29.3,27,10.3))} for the D66. This gives us levels of agreement of 0.61 for the PvdA, and 0.48 for the D66.
 
 \begin{Scode}{echo=TRUE,fig=FALSE}
 agreement(c(2.4,2.8,3.2,6.2,13.5,30.4,41.6)) # PvdA
 agreement(c(1.6,2.6,8.2,21,29.3,27,10.3))    # D66
 \end{Scode}
 
+\subsection{Using Agreement with Survey Data}
+
 When using survey data (or other similarly structured data), it is easy to call \texttt{agreement} together with the helper function and a variable name (e.g. var99): \texttt{agreement(collapse(var99, pos=0:7))}. Subscripting works as expected: \texttt{agreement(collapse(var99[country==\symbol{34}UK\symbol{34}], pos=0:7))}, so \texttt{sapply} plays nicely. %% \symbol{34} to get straight quotes (ASCII)
 
+\subsection{Agreement A with and without Simulated Coding Error}
+
+When agreement is calculated on ordered rating scales from sources that are manually coded, the influence of coding error on the resulting value of agreement can result in uncertainty. Using simulated coding error, it is possible to express this uncertainty, subject to certain assumptions.
+
+The function \texttt{compareAgreement} returns a list with agreement ``A'' without simulated coding errors (i.e. simply calculated), the mean of agreement with simulated coding error, and the standard deviation of agreement with simulated coding error. Default values for the simulation are: n=500 samples, e=0.01 proportion of samples that are simulated as mis-coded, N=500 replications for calculating the mean and standard deviation. Given that these coding errors are simulated, each run will give a different value of the mean and standard deviation.
+
+The helper function \texttt{agreementError} is used for the actual simulations, so different measures of central tendency can be calculated. Contrary to bootstrapping, it is not necessary to have all positions observed in the frequency vector. To understand the advantage, take an extreme example: [3 0 0 0 0]. Here we have three observations at the first position, but none at the others. Bootstrapping will always lead to the same agreement score (perfect agreement). This can be misleading if coding error can be assumed. For example, if these three observations refer to a `strongly agree' answer, it is usually conceivable that some of these answers could refer to `somewhat agree'. The function lets you specify how many of the observations should be assumed to be potentially mis-coded, and calculates agreement accordingly. If an observation is assumed to be potentially mis-coded, it is randomly set to the position to the left, the position to the right, or the position itself. If the first or last observation is chosen, the simulation takes care not to suggest values that could not occur.
+
+Usage: \texttt{compareAgreement(expand(V))}.
+
 \subsection{Calculating Polarization}
+
 The agreement scores are suitable to express polarization, but the numbers are not intuitive to interpret. The function \texttt{polarization} offers easily interpretable values by re-scaling agreement A. More precisely, it gives $(1-agreement)/2$. This means that a polarization value of 1 means perfect polarization (bottom-left corner of the figure above), and a value of 0 means perfect agreement. A value of 0.5 corresponds to the `no agreement' in the above graph.
 
 Usage is equivalent to \texttt{agreement}. In the first example, we specify the entire data, use the \texttt{collapse} helper function to determine the frequency vector (note: there are no observations at position 6, even though this position is permitted), and calculate polarization values.
@@ -144,7 +167,36 @@ Leik's ordinal dispersion measure is a percentage, and can be interpreted accord
 
 \citet{TW} take a different approach to measuring consensus, using the Shannon entropy as the basis.
 
+If you come across an error that the vector supplied does not contain whole numbers, try round(V,0) to remove any detritus from calculating the frequency vector.
+
+Usage: \texttt{consensus(V)}.
+
+\subsection{Entropy}
+
+The Shannon entropy can be calculated using \texttt{entropy}. This function follows \citet{}TW and ignores categories with zero observations. The Shannon entropy ignores the order of categories; use \texttt{consensus} to consider the order of categories.
+
+\section{Berry and Mielke's IOV}
+
+\citet{BerryMielke} introduced a measure of dispersion based on squared Euclidean distances (IOV). Contrary to the presentation in \citet{BlairLacy}, the adjustment for Tmax omitted by Blair and Lacy is included here, as there is no reason to leave it out when a computer does the calculation. A derived measure \texttt{COV} by \citet{Kvalseth} is implemented separately as \texttt{Kvalseth}. Usually, the IOV is equivalent to 1-\texttt{lsquared} by \citet{BlairLacy}.
+
+\subsection{Kvalseth COV}
+
+\texttt{Kvalseth} COV is a measure of dispersion derived from \texttt{BerryMielke}, based on Euclidean distances.
+
+\section{Blair and Lacy's ``l'' (squared)}
+
+\citet{BlairLacy} introduced a measure of concentration ``l'' (squared), based on linear Euclidean distances. It is implemented as \texttt{lsquared}.
+
+\subsection{``d'' (squared)}
+
+\citet{BlairLacy} introduced a measure of concentration ``d'' squared, based on linear Euclidean distances. This measure does not normalize values, which is done by \texttt{lsquared}. The non-normalized measure is implemented as \texttt{dsquared}.
+
+\section{Garcia-Montalvo and Reynal-Querol}
+
+\citet{MRQ} calculate polarization as introduced by \citet{RQ}. This measure is known as the Reynal-Querol index of polarization (RQ), Montalvo and Reynal-Querol (MRQ), or Garcia-Montalvo and Reynal-Querol. The measure of dispersion based on squared Euclidean distances. The frequency vector needs to be standardized for the Reynal-Querol index to work; if the sum of the frequency vector is not 1 (i.e. it is not standardized), the function automatically standardizes the frequency vector by dividing each element of the vector by the sum of the vector. The assumption is that the frequencies are complete.
+
 \section{AJUS}
+
 The package includes a few additional functions for frequency vectors. The AJUS classification of distributions is one: \citet{Galtung} introduced a system to classify distributions according to shape. This is a means to reduce complexity. For full details refer to Galtung's book on social research.
 
 \texttt{ajus(distribution)} gives you the shape or type of the distribution, as well as whether there is a skew. I have added two new types F and L to complement the ones identified by Galtung. The skew is given as -1 for a negative skew, 0 for absence of skew, or +1 for a positive skew.
@@ -195,6 +247,7 @@ ajusPlot(V7)
 \end{Scode}
 
 \section{ISD}
+
 The ISD system by \citet{Galtung} is another way to reduce complexity, this time for changes over  time. The ISD takes a vector with three time points. These three points describe two periods during which changes may occur (that is two transition points). \texttt{isd(distribution)} gives you a type (i.e the number) and a description of the type (i.e. the description in words).
 
 \begin{itemize}
@@ -247,14 +300,15 @@ This example illustrates multiple modes. The frequencies o 528 and 530 are nearl
 
 \begin{Scode}{echo=TRUE,fig=FALSE}
 # Example 4: similar values
-V3 <- c(30,40,510,130,530,50,10) 
+V3 <- c(30,40,510,130,530,50,10)
 modes(V3, tolerance=30) # will find positions 3 and 5 (510 and 530 are nearly the same)
 \end{Scode}
 
 % needs an example with second.modes
 
 \section{Going Further}
-For further documentation, please refer to the original contributions by \citet{vdE2001}, \citet{Leik}, \citet{TW}, and \citet{Galtung}, and refer to the package help files.
+
+For further documentation, please refer to the original contributions by \citet{vdE2001}, \citet{Leik}, \citet{TW}, \citet{BerryMielke}, \citet{BlairLacy}, \citet{RQ}, and \citet{Galtung}, and refer to the package help files.
 
 \bibliographystyle{plainnat}
 

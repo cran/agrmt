@@ -1,0 +1,174 @@
+agrmt 1.40.1
+------------
+
+- Montalvo Reynal-Querol can now handle non-standardized frequency vectors
+- fixes in documentation
+
+agrmt 1.40
+-----------
+
+- fixes in documentation
+- substantial updates to the vignette
+
+agrmt 1.39.4
+--------------
+
+- include NEWS in package
+
+agrmt 1.39.3
+--------------
+
+- updating NAMESPACE
+- fixing non-ASCII in comment
+
+agrmt 1.39
+--------------
+
+- updated package DESCRIPTION
+- clarified documentation of Berry Mielke
+
+agrmt 1.37
+--------------
+
+- adding MRQ()
+
+agrmt 1.35
+--------------
+
+- fixed and verified Berry Mielke
+
+agrmt 1.34
+--------------
+
+- fixed odd/even in Berry Mielke
+- clarified documentation of AJUS plots
+
+agrmt 1.33
+--------------
+
+- passing arguments
+
+agrmt 1.31
+--------------
+
+- new measures included: Berry Mielke, Blair Lacy, Kvalseth, dsquared, lsquared
+
+agrmt 1.30
+--------------
+
+- updates to documentation
+- updating package vignette
+- reaching version 1
+
+agrmt 0.29
+--------------
+
+- adding consensus measures
+
+agrmt 0.28
+--------------
+
+- added agreementError
+- adjusting code and documentation in other agreement functions
+
+agrmt 0.27
+--------------
+
+- adding Leik's ordinal dispersion
+
+agrmt 0.26
+--------------
+
+- releasing to CRAN
+- updating documentation and package vignette
+
+agrmt 0.25
+--------------
+
+- adding AJUSF + L
+
+agrmt 0.24
+--------------
+
+- improved AJUS plot
+- better AJUS output
+
+agrmt 0.23
+--------------
+
+- fix in AJUS classification
+
+agrmt 0.22
+--------------
+
+- fix in AJUS classification
+
+agrmt 0.21
+--------------
+
+- fix in AJUS skew
+- updates to documentation
+
+agrmt 0.19
+--------------
+
+- input validation in modes()
+
+agrmt 0.18
+--------------
+
+- updated package vignette
+- naming functions consistently
+- naming consistency (S3)
+
+agrmt 0.16
+--------------
+
+- fixes to AJUS
+- fixes to ISD
+
+agrmt 0.14
+--------------
+
+- adding package vignette
+
+agrmt 0.13
+--------------
+
+- fix in collapse() function
+
+agrmt 0.12
+--------------
+
+- improvements to modes()
+
+agrmt 0.11
+--------------
+
+- changes to package DESCRIPTION
+
+agrmt 0.11
+--------------
+
+- fix in modes()
+
+agrmt 0.9
+--------------
+
+- improved input validation
+
+agrmt 0.8
+--------------
+
+- better documentation of agreement, polarization, and collapse
+
+agrmt 0.7
+--------------
+
+- fixed order in collapse()
+- fixing internal consistencies in documentation
+
+agrmt 0.6
+--------------
+
+- additional functions: AJUS, ISD
