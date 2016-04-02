@@ -1,7 +1,21 @@
+agrmt 1.40.4
+------------
+- fixed MRQ standardization
+
+agrmt 1.40.3
+------------
+
+- reference in MRQ.Rd to 2005 AER article, consistent with the formula used
+
+agrmt 1.40.2
+------------
+
+- DOI in package description
+
 agrmt 1.40.1
 ------------
 
-- Montalvo Reynal-Querol can now handle non-standardized frequency vectors
+- Montalvo Reynal-Querol (MRQ) can now handle non-standardized frequency vectors
 - fixes in documentation
 
 agrmt 1.40
