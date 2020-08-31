@@ -1,5 +1,5 @@
 compareAgreement <- function(V, n=500, e=0.01, N=500, pos=FALSE) {
-  #            V = vector
+  #            V = vector of values (*not* collapsed)
   #            n = number of values to sample in error.agreement
   #            e = proportion of errors to sample in error.agreement
   #            N = number of replications for mean and standard deviation

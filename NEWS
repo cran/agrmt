@@ -1,3 +1,65 @@
+agrmt 1.42.4
+------------
+- updating for CRAN submission
+
+agrmt 1.42.3
+------------
+
+- typo in vignette
+- renamed helper function: truncate > truncatevector to avoid conflict with base
+
+agrmt 1.42.2
+------------
+
+- collapse() handles NA better
+
+agrmt 1.42.1
+------------
+
+- clarifications in documentation
+
+agrmt 1.42
+----------
+
+- new functions by Clem Aeppli to approximate variance/standard deviations
+- dist is now called disper to avoid conflict with R base
+- update licence to 2020
+
+agrmt 1.41
+----------
+
+- adding new functions by Clem Aeppli (Reardon, censor, truncate, concentration, disper)
+- clarifications in the documentation
+- rewriting some of the documentation
+- fixing typos in descriptions
+
+agrmt 1.40.9
+----------
+
+- fixing typo/error in package vignette, clarification of how layer weight is calculated
+
+agrmt 1.40.8
+----------
+
+- various small updates and clarifications in the manual
+
+agrmt 1.40.7
+------------
+
+- clarification of 'polarization' using van der Eijk's measure in vignette and on web
+- clarification in documentation that 'agreementError' and 'compareAgreement' take population vectors, not frequency vectors
+- including [3 0 0 0 0] as example in the code, not just the description of agreement
+
+agrmt 1.40.6
+------------
+
+- updated contact details
+
+argmt 1.40.5
+------------
+
+- now using MIT licence
+
 agrmt 1.40.4
 ------------
 - fixed MRQ standardization

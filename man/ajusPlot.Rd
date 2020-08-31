@@ -9,6 +9,6 @@
   \item{...}{Arguments to pass to the plotting function}
   \item{variant}{Strict AJUS following Galtung, or modified to include F and L types (default)}
 }
-\details{This function plots the frequency vector along with its AJUS classification and skew. See \code{\link{ajus}} for a description of the AJUS system and the different parameters. In contrast to the \code{ajus} function, \code{ajusPlot} can deal with missing values (they are removed when calculating the AJUS type, but considered in the plot). This makes \code{ajusPlot} useful for classifying time series. Additional arguments can be passed to the to the underlying \code{plot} function.}
+\details{This function plots the frequency vector along with its AJUS classification and skew. See \code{\link{ajus}} for a description of the AJUS system and the different parameters. In contrast to the \code{ajus} function, \code{ajusPlot} can deal with missing values. Missing values are removed when calculating the AJUS type (because AJUS does not handle missing values), but they are considered in the plot. This makes \code{ajusPlot} useful for classifying time series where missing values may occur. Additional arguments can be passed to the underlying \code{plot} function.}
 \author{Didier Ruedin}
 \seealso{\code{\link{ajus}}}

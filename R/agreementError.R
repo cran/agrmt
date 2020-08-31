@@ -10,7 +10,7 @@ agreementError <- function(V, n=500, e=0.01, pos=FALSE) {
     warning("Warning: Expected a vector, or vector is empty.")
     return(NA)
   }
-  
+
   # input validation: is the position argument provided?
   # if position argument is not provided, then use the values that occur in the vector as positions
   l <- length(pos)
