@@ -1,3 +1,15 @@
+agrmt 1.42.7
+------------
+- clarification in documentation
+
+agrmt 1.42.6
+------------
+- push to Rforge
+
+agrmt 1.42.5
+------------
+- let collapse() handle NA
+
 agrmt 1.42.4
 ------------
 - updating for CRAN submission

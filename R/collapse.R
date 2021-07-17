@@ -1,15 +1,26 @@
 collapse =
-  function(D, pos=FALSE) {
+  function(D, pos=FALSE, na.rm=TRUE) {
     # Calculates a frequency vector F from a population vector D
     # Arguments:  D  = population vector
     #            pos = positions of the categories (necessary if there are categories with 0 observations)
     #                 if nothing i provided, we assume observations in all categories
     #                 e.g. if position 2 is not present in the population, no 0 will be added
+    #         na.rm = NA are removed (default)
+    if(na.rm == TRUE) {
+      # remove NA from vector, as.numeric() to get back the vector
+      D = as.numeric(na.omit(D))
+      }
     if(is.vector(D) == FALSE) {
+      # check if we have a vector
       warning("Warning: Expected a vector, or vector is empty.")
       return(NA)}
+    if(is.numeric(D[1]) == FALSE) {
+      # check if we have numbers in the vector
+      warning("Warning: Expected a numeric value in the vector.")
+      return(NA)}
     if(is.na(D[1]) == TRUE) {
-      warning("Warning: Expected a vector, or vector is empty/NA.")
+      # fail if NA are found of empty
+      warning("Warning: Expected a vector, vector is empty, or vector starts with NA.")
       return(NA)}
     T = as.data.frame(table(D))  # table(D) to count frequencies
     F = T[,2]                    # [,2] chooses the values

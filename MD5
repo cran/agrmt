@@ -1,7 +1,7 @@
-44a2d99bd4192a5445e284b4f9f5058d *DESCRIPTION
-7f3811f56735c9bf7c2f0c23a0d87433 *LICENSE
+c343de94622b954e82bad1fe00bae19a *DESCRIPTION
+4212f7ac557cba90e9797a51998a7932 *LICENSE
 c03cd402c8db1b6ebacfde4b72766bd7 *NAMESPACE
-fc7459982e6bdf7990f9a48628fe1d48 *NEWS
+3f8b446ba5b23a831a3595138b11c585 *NEWS
 d18bb8a35cc0284e0ba0683f9041b7fb *R/BerryMielke.R
 0cfbc9dcf1c307e75718f93cab370af1 *R/BlairLacy.R
 7a39dcd524c369f1d8fee6e1bf0fc2dc *R/D.variance.R
@@ -15,7 +15,7 @@ b7db15397cc8c44213373bb3412af216 *R/ajus.R
 fbf8bd3b5eae014b54a8e18ea4519e6c *R/ajusCheck.R
 87dd158c7d076572ea9d0c5a47ee831d *R/ajusPlot.R
 874c528366b7db605673a933087ebe60 *R/censor.R
-feb2c11c2b62a1f710ccad4588345156 *R/collapse.R
+553866f76de0b726eb64f29078bca3ef *R/collapse.R
 357ce744f6341fb0c2e9c0fda3f0c508 *R/compareAgreement.R
 13f36177dc8357ed6c9552946758ac39 *R/compareValues.R
 4679515ef5f19286e081eab329f22c5d *R/concentration.R
@@ -40,10 +40,10 @@ d227c22b48ca2cd9d06aa812225c05de *R/sd.variance.R
 c160413530575cd41dbf8c7c6a5d19f4 *R/secondModes.R
 d8a7e1f7b68a035ba80d5d11d568d77c *R/truncatevector.R
 68ff210f477d8068a30324c90dd0048e *R/var.variance.R
-5c4fbfbf82cfa66bd21c1ac1fa89fa2f *build/vignette.rds
+d9c244f970663216b904f2c342fd5a26 *build/vignette.rds
 b07dd6f247846b7cbcdd5606e5f5747b *inst/doc/agrmt.R
 4668ca14b604d404c9c6c8f82595dbbc *inst/doc/agrmt.Rnw
-92db689cf99ce0ebc985a3973c250399 *inst/doc/agrmt.pdf
+80f8338df9dae4eab9e65be5da61c622 *inst/doc/agrmt.pdf
 ff04bf254c47589be2f00c55ebfeed46 *man/BerryMielke.Rd
 361f08199bdc15ac7d143b605ede4b41 *man/BlairLacy.Rd
 4b5e1ab83a484079fc3b19d3f6f526e9 *man/D.variance.Rd
@@ -58,7 +58,7 @@ cf0c6d9cf93bebc931fde35baa017169 *man/ajus.Rd
 14030c28c27b9181a11c3ca0c8749a64 *man/ajusCheck.Rd
 dbe02e70b91ebe53599c80fdbe7bdff5 *man/ajusPlot.Rd
 a0a5b3adee535da0e59a39bb7c469f75 *man/censor.Rd
-e7ec18818991b16590374af226ec52b1 *man/collapse.Rd
+92221a603aba171be7b03a478cbe628f *man/collapse.Rd
 dce425688f2728fccd7a4f1c6805d229 *man/compareAgreement.Rd
 d5dd0c36b24b0490fa8d6a08b0ce16c7 *man/compareValues.Rd
 698da8da6e9409c8796dddd99ca1d9cd *man/concentration.Rd
