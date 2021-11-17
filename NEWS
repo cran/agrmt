@@ -1,3 +1,8 @@
+agrmt 1.42.8
+------------
+- clarifications in documentation
+- fix in Reardon() for unusual cases
+
 agrmt 1.42.7
 ------------
 - clarification in documentation
