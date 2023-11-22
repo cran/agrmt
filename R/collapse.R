@@ -22,7 +22,8 @@ collapse =
       # fail with warning if NA are found or empty
       warning("Warning: Expected a vector, vector is empty, or vector starts with NA.")
       return(NA)}
-    T = as.data.frame(table(D))  # table(D) to count frequencies
+    if(na.rm==TRUE){T = as.data.frame(table(D))}                  # table(D) to count frequencies
+    else{T = as.data.frame(table(D, useNA="ifany"))}  # table(D) to count frequencies
     F = T[,2]                    # [,2] chooses the values
     l = length(pos)              # number of categories specified
     if (!(pos[1] == FALSE & pos[l] == FALSE)) {   # number of positions is provided:

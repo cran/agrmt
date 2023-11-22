@@ -6,9 +6,9 @@
 \arguments{
   \item{V}{A frequency vector}
 }
-\details{This function calculates Kvalseth's COV, a measure of dispersion based on linear Euclidean distances. It is based on th IOV measure, implemented as \code{\link{BerryMielke}}. This function follows the presentation by Blair and Lacy 2000.}
+\details{This function calculates Kvalseth's COV, a measure of dispersion based on linear Euclidean distances. It is based on the IOV measure, implemented as \code{\link{BerryMielke}}. This function follows the presentation by Blair and Lacy 2000.}
 \value{The function returns the COV.}
-\references{Blair, J., and M. Lacy. 2000. Statistics of Ordinal Variation. Sociological Methods \& Research 28 (3): 251-280.}
+\references{Blair, J., and M. Lacy. 2000. Statistics of Ordinal Variation. Sociological Methods & Research 28 (3): 251-280.}
 \author{Didier Ruedin}
 \seealso{\code{\link{BerryMielke}}, \code{\link{lsquared}}}
 \examples{

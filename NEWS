@@ -1,3 +1,22 @@
+agrmt 1.42.12
+-------------
+- addressing Escaped LaTeX specials: \& in documentation
+- better documentation for collapse function
+- removed unused rm.replace in collapse function
+- collapse now properly counts NA if na.rm=FALSE is used
+
+agrmt 1.42.11
+-------------
+- year 2023
+
+agrmt 1.42.10
+-------------
+- clarifications in documentation
+
+agrmt 1.42.9
+------------
+- year 2022
+
 agrmt 1.42.8
 ------------
 - clarifications in documentation

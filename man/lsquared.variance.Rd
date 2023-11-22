@@ -9,6 +9,6 @@
 \details{Helper function to calculate approximate variance of Blair and Lacy's (2000) lsquared.}
 
 \value{Approximate variance of Blair and Lacy's lsquared}
-\references{Blair, J., and M. Lacy. 2000. Statistics of Ordinal Variation. Sociological Methods \& Research 28 (3): 251-280.}
+\references{Blair, J., and M. Lacy. 2000. Statistics of Ordinal Variation. Sociological Methods & Research 28 (3): 251-280.}
 \author{Clem Aeppli}
 \seealso{\code{\link{BlairLacy}}}
